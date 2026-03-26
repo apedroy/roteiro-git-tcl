@@ -1,5 +1,5 @@
-# Abrir o arquivo netlist
-set arquivo [open "netlist" r]
+# Abrir o arquivo netlist.v
+set arquivo [open "netlist.v" r]
 
 # Ler conteúdo
 set conteudo [read $arquivo]
