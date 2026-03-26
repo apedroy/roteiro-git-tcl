@@ -1,5 +1,5 @@
-# Abrir e ler o netlist
-set f [open "netlist" r]
+# Abrir e ler o netlist.v
+set f [open "netlist.v" r]
 set conteudo [read $f]
 close $f
 
@@ -12,7 +12,7 @@ set modulos {}
 array set hierarquia {}
 array set tem_primitiva {}
 
-# 🔹 1ª PASSADA: identificar módulos
+# Identificar módulos
 foreach linha $linhas {
     if {[regexp {^module\s+(\w+)} $linha -> nome]} {
         set modulo_atual $nome
@@ -22,7 +22,7 @@ foreach linha $linhas {
     }
 }
 
-# 🔹 2ª PASSADA: identificar instâncias
+# Identificar instâncias
 set modulo_atual ""
 
 foreach linha $linhas {
@@ -55,7 +55,7 @@ foreach linha $linhas {
     }
 }
 
-# 🔹 3ª PASSADA: imprimir relatório
+# Imprimir relatório
 puts "=== HIERARQUIA DO DESIGN ===\n"
 
 foreach mod [lsort $modulos] {
