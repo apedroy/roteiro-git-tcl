@@ -1,5 +1,5 @@
 # Ler arquivo
-set f [open "netlist.v" r]
+set f [open "netlista.v" r]
 set conteudo [read $f]
 close $f
 
