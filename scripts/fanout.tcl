@@ -58,7 +58,7 @@ foreach net [array names fanout] {
 # Ordenar por fanout (decrescente)
 set lista_ordenada [lsort -integer -decreasing -index 0 $lista]
 
-# 🔝 Top 10
+# Top 10
 puts "=== TOP 10 NETS POR FANOUT ==="
 set i 0
 foreach item $lista_ordenada {
@@ -70,7 +70,7 @@ foreach item $lista_ordenada {
 }
 puts ""
 
-# ⚠️ Nets com fanout zero (possíveis erros)
+# Nets com fanout zero (possíveis erros)
 puts "=== NETS COM FANOUT ZERO (POSSÍVEIS ERROS) ==="
 foreach net [array names fanout] {
     if {$fanout($net) == 0} {
